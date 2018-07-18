@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +9,24 @@ import { Component } from '@angular/core';
     <div fxLayout="row">
       <div fxFlex="200px">
         <mat-nav-list>
-          <a mat-list-item href="#">Link 1</a>
-          <a mat-list-item href="#">Link 2</a>
-          <a mat-list-item href="#">Link 3</a>
+          <h3 matSubheader>Entities</h3>
+          <a mat-list-item routerLinkActive="active-link" routerLink="segments">Segments</a>
+          <a mat-list-item routerLinkActive="active-link" routerLink="positions">Positions</a>
+          <h3 matSubheader>Trends</h3>
+          <a mat-list-item routerLinkActive="active-link" routerLink="reports">Reports</a>
         </mat-nav-list>
       </div>
       <div fxFlex style="padding-top: 8px">
         <router-outlet></router-outlet>
       </div>
     </div>
-  `
+  `,
+  styles: [`
+      .active-link {
+        /*font-weight: bold;*/
+        color: #3700B3;
+      }
+  `]
 })
 export class AppComponent {
   title = 'stage-demo';
