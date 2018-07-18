@@ -8,12 +8,14 @@ import {SegmentDetailsComponent} from './segment-details/segment-details.compone
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {GraphvisDirective} from './graphvis.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SegmentsComponent,
-    SegmentDetailsComponent
+    SegmentDetailsComponent,
+    GraphvisDirective
   ],
   imports: [
     BrowserModule,

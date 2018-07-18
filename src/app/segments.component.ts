@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Segment} from './segment-details/Segment';
+import {Segment} from './Segment';
 import {SegmentService} from './segment.service';
 
 @Component({
@@ -9,6 +9,7 @@ import {SegmentService} from './segment.service';
       <mat-tab *ngFor="let segment of segments" [label]="segment.name">
         <h2>{{segment.name}}</h2>
         <p>Super segment content that is the same for all segments</p>
+        <app-segment-details></app-segment-details>
       </mat-tab>
     </mat-tab-group>
   `

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {Segment} from './segment-details/Segment';
+import {Segment} from './Segment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +8,15 @@ import {Segment} from './segment-details/Segment';
 export class SegmentService {
 
   SEGMENTS: Segment[] = [
-    {name: 'Segment X'},
-    {name: 'Segment A'},
-    {name: 'Segment ABC'}
+    {name: 'Segment X', decisionTree: ''},
+    {name: 'Segment A', decisionTree: ''},
+    {name: 'Segment ABC', decisionTree: ''}
   ];
 
   constructor() {
   }
 
-  getSegments(): Observable<Segments[]> {
+  getSegments(): Observable<Segment[]> {
     return of(this.SEGMENTS);
   }
 }
