@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {SegmentsComponent} from './segments/segments.component';
+import {SegmentsComponent} from './segments.component';
 import {SegmentDetailsComponent} from './segment-details/segment-details.component';
 
 const routes: Routes = [

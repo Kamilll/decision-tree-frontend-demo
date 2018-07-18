@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 
 @Injectable({
@@ -12,7 +12,8 @@ export class SegmentService {
     'Segment ABC'
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
   getSegments(): Observable<string[]> {
     return of(this.SEGMENTS);
