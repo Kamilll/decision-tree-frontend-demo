@@ -8,9 +8,9 @@ import {Segment} from './Segment';
 export class SegmentService {
 
   SEGMENTS: Segment[] = [
-    {name: 'Segment X', decisionTree: ''},
-    {name: 'Segment A', decisionTree: ''},
-    {name: 'Segment ABC', decisionTree: ''}
+    {name: 'Segment X', decisionTree: 'dinetwork {1 -> 1 -> 2; 2 -> 3; 2 -- 4; 2 -> 1 }'},
+    {name: 'Segment A', decisionTree: 'dinetwork {1 -> 1 -> 2; 2 -> 3; 2 -- 4; 2 -> 1 }'},
+    {name: 'Segment ABC', decisionTree: 'dinetwork {1 -> 1 -> 2; 2 -> 3; 2 -- 4; 2 -> 1 }'}
   ];
 
   constructor() {

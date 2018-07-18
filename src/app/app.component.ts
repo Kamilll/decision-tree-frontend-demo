@@ -23,7 +23,6 @@ import {Component} from '@angular/core';
   `,
   styles: [`
       .active-link {
-        /*font-weight: bold;*/
         color: #3700B3;
       }
   `]

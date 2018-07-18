@@ -1,43 +1,33 @@
 import {Directive, ElementRef, Input} from '@angular/core';
+import * as vis from 'vis';
 import {DataSet, Network} from 'vis';
+import {Segment} from './Segment';
 
 @Directive({
   selector: '[appGraphVis]'
 })
 export class GraphvisDirective {
 
-  network;
+  network: vis.Network;
   options = {};
 
   constructor(private el: ElementRef) {
   }
 
   @Input()
-  set appGraphVis(graphData) {
-    console.log('Set network');
+  set appGraphVis(segment: Segment) {
+    console.log(`Set network for segment ${segment.name}`);
 
-    const nodes: DataSet = new DataSet([
-      {id: 1, label: 'Node 1'},
-      {id: 2, label: 'Node 2'},
-      {id: 3, label: 'Node 3'},
-      {id: 4, label: 'Node 4'},
-      {id: 5, label: 'Node 5'}
-    ]);
+    const parsedData = vis.network.convertDot(segment.decisionTree);
 
-    const edges: DataSet = new DataSet([
-      {from: 1, to: 3},
-      {from: 1, to: 2},
-      {from: 2, to: 4},
-      {from: 2, to: 5}
-    ]);
-
-    const graphDataX = {
-      nodes: nodes,
-      edges: edges
+    const data = {
+      nodes: parsedData.nodes,
+      edges: parsedData.edges
     };
 
+
     if (!this.network) {
-      this.network = new Network(this.el.nativeElement, graphDataX, this.options);
+      this.network = new Network(this.el.nativeElement, data, this.options);
     }
   }
 }
