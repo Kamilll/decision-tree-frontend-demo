@@ -28,9 +28,9 @@ const NETWORK_OPTIONS = {
 };
 
 @Directive({
-  selector: '[appGraphVis]'
+  selector: '[appShowDecisionTree]'
 })
-export class GraphvisDirective {
+export class ShowDecisionTreeDirective {
 
   private network: Network;
 
@@ -38,7 +38,7 @@ export class GraphvisDirective {
   }
 
   @Input()
-  set appGraphVis(segment: Segment) {
+  set segment(segment: Segment) {
     console.log(`Set network for segment ${segment.name}`);
 
     const parsedData = vis.network.convertDot(segment.decisionTree);

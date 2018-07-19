@@ -6,7 +6,7 @@ import {Segment} from '../segment';
   template: `
     <h2>Decision tree</h2>
     <p>{{segment.decisionTree}}</p>
-    <div [appGraphVis]="segment" style="height: 60vh;"></div>
+    <div appShowDecisionTree [segment]="segment" style="height: 60vh;"></div>
   `
 })
 export class SegmentDetailsComponent implements OnInit {
