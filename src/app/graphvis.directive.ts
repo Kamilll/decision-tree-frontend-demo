@@ -9,7 +9,30 @@ import {Segment} from './Segment';
 export class GraphvisDirective {
 
   network: vis.Network;
-  options = {};
+  options = {
+    nodes: {
+      size: 50,
+      shape: 'box',
+      chosen: false,
+      color: {
+        border: '#000',
+        background: '#3700B3'
+      },
+      font: {
+        color: '#FFF'
+      }
+    },
+    layout: {
+      hierarchical: {
+        enabled: true,
+        direction: 'UD',
+        sortMethod: 'directed'
+      }
+    },
+    interaction: {
+      zoomView: false
+    }
+  };
 
   constructor(private el: ElementRef) {
   }
@@ -24,7 +47,6 @@ export class GraphvisDirective {
       nodes: parsedData.nodes,
       edges: parsedData.edges
     };
-
 
     if (!this.network) {
       this.network = new Network(this.el.nativeElement, data, this.options);
