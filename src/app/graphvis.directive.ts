@@ -1,7 +1,7 @@
 import {Directive, ElementRef, Input} from '@angular/core';
 import * as vis from 'vis';
 import {Network} from 'vis';
-import {Segment} from './Segment';
+import {Segment} from './segment';
 
 const NETWORK_OPTIONS = {
   nodes: {

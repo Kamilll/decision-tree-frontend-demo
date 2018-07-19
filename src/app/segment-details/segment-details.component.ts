@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Segment} from '../Segment';
+import {Segment} from '../segment';
 
 @Component({
   selector: 'app-segment-details',

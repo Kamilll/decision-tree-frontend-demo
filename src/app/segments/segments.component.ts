@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Segment} from './Segment';
-import {SegmentService} from './segment.service';
+import {Segment} from '../segment';
+import {SegmentService} from '../segment.service';
 
 @Component({
   selector: 'app-segments',

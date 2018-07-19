@@ -4,7 +4,7 @@ import {Component} from '@angular/core';
   selector: 'app-root',
   template: `
     <mat-toolbar color="primary">
-      <span>Test Test</span>
+      <span>Stage Calculation</span>
     </mat-toolbar>
     <div fxLayout="row">
       <div fxFlex="200px">

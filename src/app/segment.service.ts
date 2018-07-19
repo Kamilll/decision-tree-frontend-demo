@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {Segment} from './Segment';
+import {Segment} from './segment';
 
 @Injectable({
   providedIn: 'root'
