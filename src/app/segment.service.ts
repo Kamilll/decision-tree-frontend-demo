@@ -8,9 +8,28 @@ import {Segment} from './Segment';
 export class SegmentService {
 
   SEGMENTS: Segment[] = [
-    {name: 'Segment X', decisionTree: 'dinetwork {1 -> 1 -> 2; 2 -> 3; 2 -- 4; 2 -> 1 }'},
-    {name: 'Segment A', decisionTree: 'dinetwork {1 -> 1 -> 2; 2 -> 3; 2 -- 4; 2 -> 1 }'},
-    {name: 'Segment ABC', decisionTree: 'dinetwork {1 -> 1 -> 2; 2 -> 3; 2 -- 4; 2 -> 1 }'}
+    {
+      name: 'Segment X',
+      decisionTree: 'dinetwork {"Current Rating > 10" -> "Initial Rating > 13" -> "Stage 1";' +
+      ' "Current Rating > 10" -> "Stage 3";' +
+      ' "Initial Rating > 13" -> "Stage 2"}'
+    },
+    {
+      name: 'Segment A', decisionTree: 'dinetwork {' +
+      '"Is POCI" -> "Impaired Based On Rating" -> "Back Stop Criteria > 90" -> "Simplified Approach" -> "Stage 3";' +
+      '"Is POCI" -> "Stage 3";' +
+      '"Impaired Based On Rating" -> "Sage 1";' +
+      '"Back Stop Criteria > 90" -> "Stage 2";' +
+      '"Simplified Approach" -> "Stage 2"}'
+    },
+    {
+      name: 'Segment ABC', decisionTree: 'dinetwork {"Is POCI" -> "Significant Rating Deterior." -> "Past Back Stop Criteria" -> ' +
+      '"Increased Client Monitoring" -> "Stage 2";' +
+      '"Is POCI" -> "Stage 3";' +
+      '"Significant Rating Deterior." -> "Stage 1";' +
+      '"Past Back Stop Criteria" -> "Stage 2";' +
+      '"Increased Client Monitoring" -> "Stage 2"}'
+    }
   ];
 
   constructor() {
