@@ -7,9 +7,9 @@ import {SegmentService} from './segment.service';
   template: `
     <mat-tab-group>
       <mat-tab *ngFor="let segment of segments" [label]="segment.name">
-        <h2>{{segment.name}}</h2>
-        <p>Super segment content that is the same for all segments</p>
-        <app-segment-details [segment]="segment"></app-segment-details>
+        <ng-template matTabContent>
+          <app-segment-details [segment]="segment"></app-segment-details>
+        </ng-template>
       </mat-tab>
     </mat-tab-group>
   `

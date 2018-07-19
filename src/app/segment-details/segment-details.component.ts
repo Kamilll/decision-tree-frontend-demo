@@ -4,11 +4,9 @@ import {Segment} from '../Segment';
 @Component({
   selector: 'app-segment-details',
   template: `
-    <p>
-      segment-details works!
-    </p>
+    <h2>Decision tree</h2>
     <p>{{segment.decisionTree}}</p>
-    <div [appGraphVis]="segment" style="height: 60vh; background-color: gray;"></div>
+    <div [appGraphVis]="segment" style="height: 60vh;"></div>
   `
 })
 export class SegmentDetailsComponent implements OnInit {
