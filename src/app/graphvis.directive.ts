@@ -1,38 +1,38 @@
 import {Directive, ElementRef, Input} from '@angular/core';
 import * as vis from 'vis';
-import {DataSet, Network} from 'vis';
+import {Network} from 'vis';
 import {Segment} from './Segment';
+
+const NETWORK_OPTIONS = {
+  nodes: {
+    shape: 'box',
+    chosen: false,
+    color: {
+      border: '#000',
+      background: '#3700B3'
+    },
+    font: {
+      color: '#FFF'
+    }
+  },
+  layout: {
+    hierarchical: {
+      enabled: true,
+      direction: 'UD',
+      sortMethod: 'directed'
+    }
+  },
+  interaction: {
+    zoomView: false
+  }
+};
 
 @Directive({
   selector: '[appGraphVis]'
 })
 export class GraphvisDirective {
 
-  network: vis.Network;
-  options = {
-    nodes: {
-      size: 50,
-      shape: 'box',
-      chosen: false,
-      color: {
-        border: '#000',
-        background: '#3700B3'
-      },
-      font: {
-        color: '#FFF'
-      }
-    },
-    layout: {
-      hierarchical: {
-        enabled: true,
-        direction: 'UD',
-        sortMethod: 'directed'
-      }
-    },
-    interaction: {
-      zoomView: false
-    }
-  };
+  private network: Network;
 
   constructor(private el: ElementRef) {
   }
@@ -49,7 +49,7 @@ export class GraphvisDirective {
     };
 
     if (!this.network) {
-      this.network = new Network(this.el.nativeElement, data, this.options);
+      this.network = new Network(this.el.nativeElement, data, NETWORK_OPTIONS);
     }
   }
 }
