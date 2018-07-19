@@ -17,10 +17,10 @@ export class SegmentService {
     {
       name: 'Segment A', decisionTree: 'dinetwork {' +
       '"Is POCI" -> "Impaired Based On Rating" -> "Back Stop Criteria > 90" -> "Simplified Approach" -> "Stage 3";' +
-      '"Is POCI" -> "Stage 3";' +
-      '"Impaired Based On Rating" -> "Sage 1";' +
-      '"Back Stop Criteria > 90" -> "Stage 2";' +
-      '"Simplified Approach" -> "Stage 2"}'
+      '"Is POCI" -> "Stage 3x";' +
+      '"Impaired Based On Rating" -> "Stage 1";' +
+      '"Back Stop Criteria > 90" -> "Stage 2y";' +
+      '"Simplified Approach" -> "Stage 2x"}'
     },
     {
       name: 'Segment ABC', decisionTree: 'dinetwork {"Is POCI" -> "Significant Rating Deterior." -> "Past Back Stop Criteria" -> ' +
