@@ -1,6 +1,10 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {Segment} from './segment';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../environments/environment';
+
+const API_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -32,10 +36,11 @@ export class SegmentService {
     }
   ];
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
   getSegments(): Observable<Segment[]> {
-    return of(this.SEGMENTS);
+    return this.http.get<Segment[]>(API_URL + '/segments');
+    // return of(this.SEGMENTS);
   }
 }

@@ -1,4 +1,4 @@
-export class Segment {
+export interface Segment {
   name: string;
   decisionTree: string;
 }
