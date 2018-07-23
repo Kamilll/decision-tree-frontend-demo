@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Segment} from '../segment';
 import {SegmentService} from '../segment.service';
 import {MatSnackBar} from '@angular/material';
@@ -23,8 +23,8 @@ export class SegmentsComponent implements OnInit {
   constructor(private segmentService: SegmentService, private snackBar: MatSnackBar) {
   }
 
-  openSnackbar() {
-    this.snackBar.open('Error', null, {duration: 2000});
+  openSnackbar(errorMsg: string) {
+    this.snackBar.open(errorMsg, null, {duration: 2000});
   }
 
   ngOnInit() {
@@ -36,7 +36,7 @@ export class SegmentsComponent implements OnInit {
       segments => this.segments = segments,
       (error) => {
         this.error = error;
-        this.openSnackbar();
+        this.openSnackbar(error);
       });
   }
 }
