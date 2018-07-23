@@ -5,7 +5,6 @@ import {Segment} from '../segment';
   selector: 'app-segment-details',
   template: `
     <h2>Decision tree</h2>
-    <p *ngIf="segment.decisionTree"> {{segment.decisionTree}}</p>
     <div *ngIf="segment.decisionTree" appShowDecisionTree [segment]="segment" style="height: 60vh;"></div>
   `
 })
