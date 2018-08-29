@@ -10,6 +10,7 @@ import {Component} from '@angular/core';
       <div fxFlex="200px">
         <mat-nav-list>
           <h3 matSubheader>Entities</h3>
+          <a mat-list-item routerLinkActive="active-link" routerLink="runs">Runs</a>
           <a mat-list-item routerLinkActive="active-link" routerLink="segments">Segments</a>
           <a mat-list-item routerLinkActive="active-link" routerLink="positions">Positions</a>
           <h3 matSubheader>Trends</h3>

@@ -10,13 +10,16 @@ import {MaterialModule} from './material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ShowDecisionTreeDirective} from './show-decision-tree.directive';
 import {HttpClientModule} from '@angular/common/http';
+import {RunsComponent} from './runs/runs.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     SegmentsComponent,
     SegmentDetailsComponent,
-    ShowDecisionTreeDirective
+    ShowDecisionTreeDirective,
+    RunsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,9 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    // ReactiveFormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
