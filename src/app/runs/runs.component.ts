@@ -14,7 +14,7 @@ import {Run} from '../run';
     <button mat-raised-button>Create new</button>
     <mat-list>
       <mat-list-item *ngFor="let run of runs" [routerLink]="['/runs', run.id]">
-        <mat-icon mat-list-icon>note</mat-icon>
+        <mat-icon mat-list-icon>{{getIcon(run.runStatus)}}</mat-icon>
         <h4 mat-line>{{run.name}}</h4>
         <p mat-line>{{run.referenceDate | date:'yyyy-MM-dd'}}</p>
       </mat-list-item>
@@ -39,4 +39,19 @@ export class RunsComponent implements OnInit {
       runs => this.runs = runs
     );
   }
+
+  private getIcon(runStatus: String) {
+    switch (runStatus) {
+      case 'TEMPORARY': {
+        return 'schedule';
+      }
+      case 'FINAL': {
+        return 'done';
+      }
+      default:
+        console.warn(`Unrecognized status ${runStatus}`);
+        return 'feedback';
+    }
+  }
 }
+
