@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RunService} from '../run.service';
 import {Run} from '../run';
-import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-runs',
@@ -12,8 +11,13 @@ import {FormControl} from '@angular/forms';
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+    <button mat-raised-button>Create new</button>
     <mat-list>
-      <mat-list-item *ngFor="let run of runs"> {{run.name}}</mat-list-item>
+      <mat-list-item *ngFor="let run of runs" [routerLink]="['/runs', run.id]">
+        <mat-icon mat-list-icon>note</mat-icon>
+        <h4 mat-line>{{run.name}}</h4>
+        <p mat-line>{{run.referenceDate | date:'yyyy-MM-dd'}}</p>
+      </mat-list-item>
     </mat-list>
   `,
   styles: []

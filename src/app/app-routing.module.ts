@@ -5,6 +5,7 @@ import {RunsComponent} from './runs/runs.component';
 
 const routes: Routes = [
   {path: 'runs', component: RunsComponent},
+  {path: 'runs/:id', component: SegmentsComponent}, // TODO Add RunDetailComponent
   {path: 'segments', component: SegmentsComponent},
   {path: '**', redirectTo: ''}
 ];

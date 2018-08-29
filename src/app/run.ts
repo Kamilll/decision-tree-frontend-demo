@@ -1,6 +1,6 @@
 export interface Run {
   id: number;
   name: string;
-  createDate: Date;
+  referenceDate: Date;
   status: String;
 }
